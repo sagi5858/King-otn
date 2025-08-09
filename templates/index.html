@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Stock Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>AI Stock Scanner - נתוני מניות</h1>
+
+    <h2>NASDAQ</h2>
+    <table>
+        <tr><th>סימול</th><th>שינוי ב-6 חודשים (%)</th></tr>
+        {% for stock in nasdaq %}
+        <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.change if stock.change is not none else 'שגיאה' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>תל אביב</h2>
+    <table>
+        <tr><th>סימול</th><th>שינוי ב-6 חודשים (%)</th></tr>
+        {% for stock in tase %}
+        <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.change if stock.change is not none else 'שגיאה' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
