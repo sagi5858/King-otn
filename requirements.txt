@@ -1,2 +1,6 @@
 flask
 yfinance
+pandas
+numpy
+requests
+beautifulsoup4
